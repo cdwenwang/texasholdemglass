@@ -22,12 +22,12 @@ public class TexasHoldemCalUtilTest {
         myHand.add(new Card(Rank.KING, Suit.HEARTS));
 
         List<Card> board = new ArrayList<>();
-        board.add(new Card(Rank.QUEEN, Suit.HEARTS));
+        board.add(new Card(Rank.QUEEN, Suit.CLUBS));
         board.add(new Card(Rank.JACK, Suit.HEARTS));
         board.add(new Card(Rank.TEN, Suit.HEARTS));
 
         // 这里的参数调整一下，模拟 3 个对手，底池 1000，跟注 0 (过牌)
-        DecisionResult result = TexasHoldemCalUtil.analyzeAndDecide(myHand, board, 3, 1000, 0);
+        DecisionResult result = TexasHoldemCalUtil.analyzeAndDecide(myHand, board, 4, 1000, 50, 10000, 10);
 
         // 【修改点】使用 Java 标准输出，不要使用 Android Log
         System.out.println("建议动作: " + result.suggestedAction.name());
