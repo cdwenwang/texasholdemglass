@@ -18,16 +18,16 @@ public class TexasHoldemCalUtilTest {
     @Test
     public void test_analyzeAndDecide() {
         List<Card> myHand = new ArrayList<>();
-        myHand.add(new Card(Rank.ACE, Suit.HEARTS));
-        myHand.add(new Card(Rank.KING, Suit.HEARTS));
+        myHand.add(new Card(Rank.THREE, Suit.HEARTS));
+        myHand.add(new Card(Rank.SEVEN, Suit.DIAMONDS));
 
         List<Card> board = new ArrayList<>();
-        board.add(new Card(Rank.QUEEN, Suit.CLUBS));
-        board.add(new Card(Rank.JACK, Suit.HEARTS));
-        board.add(new Card(Rank.TEN, Suit.HEARTS));
+        board.add(new Card(Rank.TEN, Suit.CLUBS));
+        board.add(new Card(Rank.THREE, Suit.CLUBS));
+        board.add(new Card(Rank.THREE, Suit.SPADES));
 
         // 这里的参数调整一下，模拟 3 个对手，底池 1000，跟注 0 (过牌)
-        DecisionResult result = TexasHoldemCalUtil.analyzeAndDecide(myHand, board, 4, 1000, 50, 10000, 10);
+        DecisionResult result = TexasHoldemCalUtil.analyzeAndDecide(myHand, board, 8, 1000, 50, 10000, 10);
 
         // 【修改点】使用 Java 标准输出，不要使用 Android Log
         System.out.println("建议动作: " + result.suggestedAction.name());
